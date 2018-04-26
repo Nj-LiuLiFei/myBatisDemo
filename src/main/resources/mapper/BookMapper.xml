@@ -6,8 +6,23 @@
     <select id="selectBook" resultType="entity.BookEntity">
         select * from book where id = #{id}
     </select>
+    <select id="getSelectBook" resultType="entity.BookEntity">
+        select * from book where name = #{name}
+    </select>
     <insert id="insertBook" useGeneratedKeys="true" keyProperty="id">
         insert into book (name)
         values (#{name})
     </insert>
+
+    <!-- update 最后一个更新的值不能是 '，'号结尾 不然那报错-->
+    <update id="updateBook">
+        update book set
+        name = #{name}
+        where id = #{id}
+    </update>
+    <update id="updateBookName">
+        update book set
+        name = #{newName}
+        where name = #{sourceName}
+    </update>
 </mapper>
