@@ -23,7 +23,7 @@ public class main {
             //bookEntity.setId(-1); insert 插入成功会返还最新的主键;
 
             bookEntity.setId(1);
-            bookEntity.setName("我是更新来的值");
+            bookEntity.setName("我是新的值");
 
             List<BookEntity> bookEntityList = bookMapper.getSelectBook("测试多行更新");
             System.out.println(bookEntityList);
