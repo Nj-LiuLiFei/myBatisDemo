@@ -28,7 +28,7 @@ public class main {
             List<BookEntity> bookEntityList = bookMapper.getSelectBook("测试多行更新");
             System.out.println(bookEntityList);
             System.out.println(gson.toJson(bookEntityList));
-            //bookMapper.insertBook(bookEntity);
+            bookMapper.insertBook(bookEntity);
             //bookMapper.selectBook(1);
             //int row = bookMapper.updateBook(bookEntity); //更新的额时候会返回一个改变的行数
 
@@ -38,7 +38,7 @@ public class main {
             //int row = bookMapper.updateBookName(map);
             //System.out.println("更新的行数："+row);
             //切记：增删改操作时，要执行commit操作 查询不需要执行commit();
-            //session.commit();
+            session.commit();
 
             System.out.println(bookEntity);
         } finally {
